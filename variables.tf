@@ -43,6 +43,6 @@ variable "subnets" {
 }
 
 variable "secondary_ip_ranges" {
-  type  = map(list(string))
+  type  = map(list(object({range_name=string,ip_cidr_range = string})))
   description = "The IP range for secondary CIDR"
 }
