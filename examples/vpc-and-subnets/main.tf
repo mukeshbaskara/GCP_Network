@@ -17,16 +17,6 @@ module "vpc-and-subnets" {
       subnet_region         = "us-west1"
       subnet_private_access = "true"
       subnet_flow_logs      = "true"
-      secondary_ip_ranges   = [
-        {
-          range_name    = "subnet-02-range-1"
-          ip_cidr_range = "192.168.64.0/24"
-        },
-        {
-          range_name    = "subnet-02-range-2"
-          ip_cidr_range = "192.168.65.0/24"
-        }
-      ]
     },
     {
       subnet_name               = "subnet-03"
@@ -37,6 +27,17 @@ module "vpc-and-subnets" {
       subnet_flow_logs_sampling = 0.7
       subnet_flow_logs_metadata = "INCLUDE_ALL_METADATA"
       subnet_flow_logs_filter   = "false"
+    }
+  ]
+
+  secondary_ip_ranges   = [
+    {
+      range_name    = "subnet-02-range-1"
+      ip_cidr_range = "192.168.64.0/24"
+    },
+    {
+      range_name    = "subnet-02-range-2"
+      ip_cidr_range = "192.168.65.0/24"
     }
   ]
 }

@@ -3,6 +3,11 @@ variable "subnets" {
   description = "The list of subnets being created"
 }
 
+variable "secondary_ip_ranges" {
+  type  = list(map(string))
+  description = "The IP range for secondary CIDR"
+}
+
 variable "network_name" {
   type  = string
   description = "The name of the VPC network where subnets will be created"

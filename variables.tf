@@ -41,3 +41,8 @@ variable "subnets" {
   type  = list(map(string))
   description = "list of subnets to be created inside vpc network"
 }
+
+variable "secondary_ip_ranges" {
+  type  = list(map(string))
+  description = "The IP range for secondary CIDR"
+}
