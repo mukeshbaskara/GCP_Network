@@ -25,13 +25,7 @@ resource "google_compute_subnetwork" "subnet"{
 			filter_expr = log_config.value.filter_expr
 		}
 	}
-	dynamic "secondary_ip_range" {
-		for_each = var.secondary_ip_ranges
-		content {
-			range_name = secondary_ip_range.value.range_name
-			ip_cidr_range = secondary_ip_range.value.ip_cidr_range
-		}
-	}
+	secondary_ip_range = var.secondary_ip_ranges[each.value.subnet_name]
 	network		= var.network_name
 	project 	= var.project_id
 	description = lookup(each.value, "description", null)
