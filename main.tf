@@ -15,4 +15,5 @@ module "subnet" {
   secondary_ip_ranges = var.secondary_ip_ranges
   network_name  = var.network_name
   project_id = var.project_id
+  depends_on = [module.vpc]
 }
