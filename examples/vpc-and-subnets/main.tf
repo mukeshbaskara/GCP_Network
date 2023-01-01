@@ -30,14 +30,16 @@ module "vpc-and-subnets" {
     }
   ]
 
-  secondary_ip_ranges   = [
-    {
-      range_name    = "subnet-02-range-1"
-      ip_cidr_range = "192.168.64.0/24"
-    },
-    {
-      range_name    = "subnet-02-range-2"
-      ip_cidr_range = "192.168.65.0/24"
-    }
-  ]
+  secondary_ip_ranges   = {
+    subnet-02 = [
+      {
+        range_name    = "subnet-02-range-1"
+        ip_cidr_range = "192.168.64.0/24"
+      },
+      {
+        range_name    = "subnet-02-range-2"
+        ip_cidr_range = "192.168.65.0/24"
+      }
+    ]
+  }
 }
