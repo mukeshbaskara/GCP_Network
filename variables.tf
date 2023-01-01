@@ -43,6 +43,6 @@ variable "subnets" {
 }
 
 variable "secondary_ip_ranges" {
-  type  = list(map(string))
+  type  = map(list(string))
   description = "The IP range for secondary CIDR"
 }
