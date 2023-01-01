@@ -1,6 +1,7 @@
 module "vpc-and-subnets" {
   source                                  = "../../"
   network_name                            = "custom-vpc"
+  description                             = "custom network"
   project_id                              = "hostproject-372817"
   delete_default_internet_gateway_routes  = true
   mtu                                     = 1460
